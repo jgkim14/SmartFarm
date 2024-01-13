@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - react
+
+  react:
+    restart: always
+    build:
+      context: ./react
+    ports:
+      - 5001:5001
+    expose:
+      - 5001
+    depends_on:
+      - python
+
+  python:
+    restart: always
+    build:
+      context: ./python
+    ports:
+      - 5002:5002
+    expose:
+      - 5002
+    depends_on:
+      - mysql
+      
+
+  mysql:
+    restart: unless-stopped
+    build:
+      context: ./mysql
+    ports:
+      - 3308:3306
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./mysql/data:/var/lib/mysql
