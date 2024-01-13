@@ -8,7 +8,7 @@ RUN yarn install
 
 COPY ./sources /app
 
-RUN yarn run build
+#RUN yarn run build
 
 RUN yarn global add serve
 

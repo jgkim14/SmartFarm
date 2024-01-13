@@ -30,4 +30,4 @@ def api():
     return jsonify(data), 200
 
 if __name__ == "__main__":
-    socketio.run(app, host='0.0.0.0', port=5100, debug=True, allow_unsafe_werkzeug=True)
+    socketio.run(app, host='0.0.0.0', port=5002, debug=True, allow_unsafe_werkzeug=True)
