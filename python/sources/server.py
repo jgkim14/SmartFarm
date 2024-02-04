@@ -21,6 +21,9 @@ def test_connect():
     app.logger.info('Client connected: %s', request.sid)  # 클라이언트 연결 로그를 남깁니다.
     connected_clients[request.sid] = request.sid  # 클라이언트의 sid를 딕셔너리에 저장합니다.
 
+
+################ 여기에 코드 입력 ###############################
+
 @app.route('/QR', methods=['POST'])
 def api():
     data = request.get_json()
@@ -29,5 +32,13 @@ def api():
         socketio.emit('update', data.get('qrcode', ''), room=sid)  # 실시간으로 데이터를 각 클라이언트에 전달합니다.
     return jsonify(data), 200
 
+
+
+
+
+
+
+
+############################################################################
 if __name__ == "__main__":
     socketio.run(app, host='0.0.0.0', port=5002, debug=True, allow_unsafe_werkzeug=True)

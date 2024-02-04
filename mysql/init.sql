@@ -1,9 +1,9 @@
 -- jmedu 데이터베이스 생성
-CREATE DATABASE IF NOT EXISTS jmedu;
+CREATE DATABASE IF NOT EXISTS smartfarm;
 
 SHOW WARNINGS;
 
-USE jmedu;
+USE smartfarm;
 
 
 
