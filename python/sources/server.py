@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO
 import logging
-
+import mysql.connector
+from mysql.connector import Error
 app = Flask(__name__)
 socketio = SocketIO(app)
 
@@ -11,6 +12,22 @@ handler.setLevel(logging.INFO)  # INFO 레벨 이상의 로그를 기록합니�
 app.logger.addHandler(handler)
 
 connected_clients = {}  # 연결된 클라이언트들의 정보를 저장할 딕셔너리입니다.
+
+
+def connect_to_database():
+    try:
+        connection = mysql.connector.connect(
+            host='mysql:3306',
+            user='root',
+            password='1234',
+            database='jmedu'
+        )
+        if connection.is_connected():
+            return connection
+    except Error as e:
+        print(f"데이터베이스 연결 실패: {e}")
+        return None
+
 
 @app.route('/')
 def home():
@@ -30,4 +47,4 @@ def api():
     return jsonify(data), 200
 
 if __name__ == "__main__":
-    socketio.run(app, host='0.0.0.0', port=5100, debug=True, allow_unsafe_werkzeug=True)
+    socketio.run(app, host='0.0.0.0', port=5002, debug=True, allow_unsafe_werkzeug=True)
