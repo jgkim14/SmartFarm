@@ -9,26 +9,29 @@ SHOW WARNINGS;
 
 USE jmedu;
 
-CREATE TABLE smartFarm (
-  idx INT AUTO_INCREMENT PRIMARY KEY,
-  run BOOLEAN NOT NULL,
-  sys_fan BOOLEAN NOT NULL,
-  pump BOOLEAN NOT NULL,
-  humidity_sensor INT NOT NULL,
-  soil_sensor1 INT NOT NULL,
-  soil_sensor2 INT NOT NULL,
-  temp_sensor INT NOT NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  deleted_at DATETIME DEFAULT NULL
+CREATE TABLE record (
+  id INT AUTO_INCREMENT,
+  pump BOOL,
+  sys_fan BOOL,
+  led BOOL,
+  
+  temp DECIMAL(4,1),
+  humidity DECIMAL(4,1),
+  soil_1 DECIMAL(4,1),
+  soil_2 DECIMAL(4,1),
+
+  created_at DATETIME,
+  updated_at DATETIME,
+  PRIMARY KEY (id)
 );
 
-CREATE TABLE member (
-  idx INT AUTO_INCREMENT PRIMARY KEY,
-  id VARCHAR(255) NOT NULL,
-  pw VARCHAR(255) NOT NULL,
-  phone VARCHAR(20) NOT NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  deleted_at DATETIME DEFAULT NULL
+CREATE TABLE manualcontrol_record (
+  id INT AUTO_INCREMENT,
+
+  sys_fan BOOL,
+  led BOOL,
+
+  created_at DATETIME,
+  updated_at DATETIME,
+  PRIMARY KEY (id)
 );
