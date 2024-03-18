@@ -1,18 +1,15 @@
 FROM python:3.12-bullseye
-
-EXPOSE 5002
-
-COPY ./sources /src
-
-RUN pip install requests
-RUN pip install configparser
-RUN pip install flask
-RUN pip install flask_sqlalchemy
-RUN pip install flask_socketio
-RUN pip install flask-mysql
+WORKDIR /app
+RUN pip install Flask
 RUN pip install mysql-connector-python
+RUN pip install aiomysql
+COPY ./sources .
+EXPOSE 5002
+CMD [ "python", "./main.py" ]
 
-ENTRYPOINT ["python", "/src/server.py"]
+
+
+
 # 이미지 생성 명령어
 # docker build -f Dockerfile -t python .
 #

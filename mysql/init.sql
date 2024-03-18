@@ -15,10 +15,10 @@ CREATE TABLE record (
   sys_fan BOOL,
   led BOOL,
   
-  temp DECIMAL(4,1),
-  humidity DECIMAL(4,1),
-  soil_1 DECIMAL(4,1),
-  soil_2 DECIMAL(4,1),
+  temp DECIMAL(4,1),/*온도*/
+  humidity DECIMAL(4,1),/*습도*/
+  soil_1 DECIMAL(4,1),/*토양센서1*/
+  soil_2 DECIMAL(4,1),/*토양센서2*/
 
   created_at DATETIME,
   updated_at DATETIME,
