@@ -3,6 +3,8 @@ import mysql.connector
 from mysql.connector import Error
 import asyncio
 import aiomysql
+import websockets
+import json
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
@@ -14,6 +16,8 @@ def hello_world():
 
 
 ########################함수들
+
+
 
 #데이터베이스 연결
 def connect_to_database():
@@ -59,29 +63,65 @@ async def get_records24():
 
 
 
-async def get_temperature_records():
+async def getRecords(table):
     conn = await connect_to_database()
     async with conn.cursor() as cursor:
-        await cursor.execute("SELECT temp FROM record;")
+        await cursor.execute("SELECT %s FROM record;",(table))
         records = await cursor.fetchall()
         await conn.close()
         return records
+    
+
+
+
 
 ####################요청처리
 
 
 
 
-@app.route('/server/records_dashboard', methods=['GET'])
-def fetch_records():
-    records = asyncio.run(get_records24())
-    return jsonify([dict(record) for record in records])
+@app.get("/server/temp")
+async def temp():
+    records = await getRecords("temp")
+    return {"temp": records}
+
+@app.get("/server/humidity")
+async def humidity():
+    records = await getRecords("humidity")
+    return {"humidity": records}
+
+@app.get("/server/soil_1")
+async def soil_1():
+    records = await getRecords("soil_1")
+    return {"soil_1": records}
+
+@app.get("/server/soil_2")
+async def soil_2():
+    records = await getRecords("soil_2")
+    return {"soil_2": records}
 
 
-@app.get("server/temp", methods=['GET'])
-async def temperatures():
-    records = await get_temperature_records()
-    return {"temperatures": records}
 
+#######################1분 간격으로 대시보드에 데이터를 보내는 웹 소켓
+async def time(websocket, path):
+    while True:
+        records = asyncio.run(get_records24())
+        await websocket.send(json.dumps(records))
+        await asyncio.sleep(60)
+
+start_server = websockets.serve(time, "localhost", 8765)
+
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()
+
+
+
+
+#서버 온
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5002)
+
+
+
+    
+    

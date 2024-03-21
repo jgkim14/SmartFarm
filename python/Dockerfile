@@ -3,6 +3,7 @@ WORKDIR /app
 RUN pip install Flask
 RUN pip install mysql-connector-python
 RUN pip install aiomysql
+RUN pip install websockets
 COPY ./sources .
 EXPOSE 5002
 CMD [ "python", "./main.py" ]
