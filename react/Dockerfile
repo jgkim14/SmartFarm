@@ -12,6 +12,8 @@ RUN yarn add socket.io
 
 RUN yarn add socket.io-client
 
+RUN yarn add axios
+
 RUN yarn run build
 
 RUN yarn global add serve
