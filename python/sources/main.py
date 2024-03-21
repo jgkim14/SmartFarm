@@ -80,22 +80,22 @@ async def getRecords(table):
 
 
 
-@app.get("/server/temp")
+@app.route("/server/temp", methods=['GET', 'POST'])
 async def temp():
     records = await getRecords("temp")
     return {"temp": records}
 
-@app.get("/server/humidity")
+@app.route("/server/humidity", methods=['GET', 'POST'])
 async def humidity():
     records = await getRecords("humidity")
     return {"humidity": records}
 
-@app.get("/server/soil_1")
+@app.route("/server/soil_1", methods=['GET', 'POST'])
 async def soil_1():
     records = await getRecords("soil_1")
     return {"soil_1": records}
 
-@app.get("/server/soil_2")
+@app.route("/server/soil_2", methods=['GET', 'POST'])
 async def soil_2():
     records = await getRecords("soil_2")
     return {"soil_2": records}
