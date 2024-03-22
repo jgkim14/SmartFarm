@@ -8,6 +8,17 @@ socket.addEventListener('message', function (event) {
     console.log(event.data);//1분마다 들어온 json을 로그로 출력
 });
 
+
+
+
+
+
+
+
+
+
+
+
 //각자받기
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
