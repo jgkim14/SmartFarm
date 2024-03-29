@@ -6,7 +6,7 @@ services:
     build:
       context: ./nginx
     ports:
-      - 80:80
+      - 81:81
     depends_on:
       - react
 
