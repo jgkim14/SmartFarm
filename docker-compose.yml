@@ -27,6 +27,7 @@ services:
       context: ./python
     ports:
       - 5002:5002
+      - 8765:8765
     expose:
       - 5002
     depends_on:
@@ -40,9 +41,11 @@ services:
     ports:
       - 3308:3306
     environment:
-      MYSQL_DATABASE: 'smartfarm'
-      MYSQL_ROOT_HOST: 'host'
+      MYSQL_DATABASE: 'jmedu'
+      MYSQL_ROOT_HOST: '%'
       MYSQL_ROOT_PASSWORD: '1234'
     volumes:
       - ./mysql/data:/var/lib/mysql
+      - ./mysql/log.cnf:/etc/mysql/conf.d/log.cnf:ro
+      - ./mysql/logs:/var/log/mysql
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
