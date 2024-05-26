@@ -1,0 +1,35 @@
+.PumpBox{
+    width: 100%; /* 유지 */
+    display: flex;
+}
+
+.PumpIn {
+    flex: 1;
+    margin: 1.5vw; /* 상대적 마진 값으로 조정 */
+    padding: 1vw; /* 유지 */
+    border-radius: 1vw; /* 상대적 값으로 조정 */
+
+    -webkit-box-shadow: 0px 0px 1.2vw -0.1vw #000000; /* 상대적 그림자 크기 */
+    box-shadow: 0px 0px 1.2vw -0.1vw #000000; /* 상대적 그림자 크기 */
+}
+
+.PumpContainer {
+    margin: 1vw 0; /* 상대적 마진 값으로 조정 */
+    display: flex;
+    align-items: center;
+    padding: 0.5vw; /* 유지 */
+}
+
+.PumpFont {
+    font-size: clamp(2vw, 2.5vw, 3vw); /* 해상도에 따라 조정되되 최소 15px, 최대 30px 사이로 조정 */
+    font-weight: 550; /* 수정된 폰트 가중치 (원래 값이 올바르지 않아 보임) */
+    white-space: nowrap;
+    margin-left: 5.6vw;
+    margin-top: 1.3vw;
+}
+
+.PumpRate {
+    display: flex;
+    align-items: center;
+    margin-left: 2vw; /* 상대적 마진 값으로 조정 */
+}

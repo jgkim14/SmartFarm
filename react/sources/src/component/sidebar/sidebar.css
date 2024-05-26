@@ -1,0 +1,58 @@
+.sidebar {
+    flex: 0.7;
+    height: 120vh; /* 화면 높이에서 50px을 뺀 만큼의 높이 */
+    background-color: rgb(240, 239, 239);
+    align-items: center;
+    position: sticky;
+    z-index: 1; /* z-index 추가 */
+}
+
+.sidebarWrapper {
+    padding: 20px;
+    color: #555;
+}
+
+.sidebarListItem {
+    margin-top: 20%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.sidebarListItem.active,
+.sidebarListItem:hover {
+    background-color: rgb(212, 209, 235);
+}
+
+.sidebarIcon {
+    margin-right: 10px;
+    font-size: 20px !important;
+}
+
+.SideAvatar {
+    margin-top: 5vh;
+    height: clamp(11vw, 13vw, 15vw); /* 최소 100px, 뷰포트 너비의 12%, 최대 120px */
+    width: clamp(11vw, 13vw, 15vw); /* 최소 100px, 뷰포트 너비의 13%, 최대 130px */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.SidebarText {
+    text-align: center;
+    font-size: clamp(20px, 3vw, 30px); /* 최소 20px, 뷰포트 너비의 3%, 최대 30px */
+    white-space: nowrap;
+}
+
+.SidebarLogo {
+    margin-top: 1.3vw;
+    display: flex; /* 플렉스박스로 설정 */
+    align-items: center; /* 요소들을 수직 방향으로 중앙 정렬 */
+    vertical-align: middle;
+}
+
+.SidebarLogoText{
+    text-align: center;
+    margin-left: 0.7vw;
+    font-size: clamp(2.5vw, 3vw, 3.5vw); /* 최소 20px, 뷰포트 너비의 3%, 최대 30px */
+    white-space: nowrap;
+    font-weight: 1000;
+}

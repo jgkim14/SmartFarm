@@ -1,0 +1,31 @@
+
+.ChartBottom{
+    width: 85.3%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1.5vw;
+}
+
+.ChartBottomItem{
+
+    background-color: #f0f1f4;
+    flex:1;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 12px -1px #000000;
+    box-shadow: 0px 0px 12px -1px #000000;
+}
+
+
+.ChartBottomContainer{
+
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.ChartBottomFont{
+
+    font-size: 30px;
+    font-weight: 600;
+}

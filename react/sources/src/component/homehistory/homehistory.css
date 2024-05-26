@@ -1,0 +1,54 @@
+.HomeHistoryBox{
+    width: 100%; /* 유지 */
+    display: flex;
+}
+
+.HomeHistoryIn{
+    flex:1;
+    margin:0vw; /* 상대적인 마진 값 설정 */
+    padding: 0vw; /* 유지 */
+    border-radius: 1vw; /* 상대적인 값을 사용 */
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 1.2vw -0.1vw #000000; /* 상대적인 그림자 크기 */
+    box-shadow: 0px 0px 1.2vw -0.1vw #000000; /* 상대적인 그림자 크기 */
+}
+
+.HomeHistoryFont{
+    font-size: clamp(1.6vw, 2vw, 2.5vw); /* vw 단위를 사용하여 해상도에 따라 조정 */
+    font-weight: 550; /* 수정된 폰트 무게 */
+    white-space: nowrap;
+}
+
+.HomeHistoryContainer {
+    margin-top: 2vw;/* 상대적인 마진 값 설정 */
+    display: flex;
+    align-items: center;
+    padding: 0.5vw; /* 유지 */
+    flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
+}
+
+.HomeHistoryListItem {
+    display: flex; /* flexbox 모델 적용 */
+    align-items: center; /* 가운데 정렬 */
+    border-radius: 10px;
+    border-color: #000000;
+}
+
+.HomeHistoryListItem.active,
+.HomeHistoryListItem:hover {
+    background-color: #bbd4f0;
+    border-radius: 10px;
+}
+
+/* 새로운 클래스 추가 */
+.HomeHistoryList {
+    display: flex;
+    flex-direction: row; /* 텍스트 항목들을 가로 방향으로 정렬 */
+    gap: 1vw; /* 항목 간 간격 설정 */
+    margin-top: 2vw;
+}
+
+.selected {
+    background-color: #bbd4f0; /* 예시 색상, 원하는 색상으로 변경 가능 */
+    border-radius: 10px;
+}

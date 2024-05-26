@@ -1,0 +1,57 @@
+.GraphBox {
+    width: 60%; /* 유지 */
+    height: 55%;
+    display: flex;
+}
+
+.GraphBoxIn {
+    flex: 1;
+    margin: 1vw; /* 상대적인 마진 값 설정 */
+    padding: 0.2vw;
+    border-radius: 1vw; /* 상대적인 값을 사용 */
+    background-color: #f0f1f4;
+    -webkit-box-shadow: 0px 0px 1.2vw -0.1vw #000000; /* 상대적인 그림자 크기 */
+    box-shadow: 0px 0px 1.2vw -0.1vw #000000; /* 상대적인 그림자 크기 */
+}
+
+.GraphBoxContainer {
+    margin: 1vw 0; /* 상대적인 마진 값 설정 */
+    display: flex;
+    align-items: center;
+    padding: 0.5vw; /* 유지 */
+}
+
+.GraphBoxTextContainer {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    margin-left: 0.5vw; /* 아이콘과 텍스트 사이의 간격 */
+}
+
+.GraphBoxFontTop {
+    font-size: clamp(1vw, 1.2vw, 1.4vw); /* 온도의 폰트 크기를 줄임 */
+    font-weight: 550;
+    white-space: nowrap;
+    margin-left: 0vw;
+}
+
+.GraphBoxFontBottom {
+    font-size: clamp(1.6vw, 1.9vw, 2.1vw); /* temp의 폰트 크기를 유지 */
+    font-weight: 550;
+    white-space: nowrap;
+    
+    margin-left: 0vw;
+}
+
+.GraphBoxFontBottomBottom {
+    font-size: clamp(1vw, 1.2vw, 1.4vw); /* temp의 폰트 크기를 유지 */
+    font-weight: 550;
+    white-space: nowrap;
+    margin-bottom: 0.5vw;
+    margin-left: 2vw;
+}
+
+.GraphBoxRate {
+    display: flex;
+    align-items: center;
+    margin-left: 2vw; /* 상대적인 마진 값 설정 */
+}

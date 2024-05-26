@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+}
+
+.others {
+    flex: 4;
+    padding: 20px; /* 원하는 만큼 패딩을 추가하여 내용이 Topbar 아래에 위치하도록 조정 */
+    margin-top: 15vh;
+}
+
+/* 추가적으로 Topbar 스타일을 조정할 수 있습니다 */
+.App {
+    position: relative;
+}
+
+.App > .topbar {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute; /* fixed에서 absolute로 변경 */
+    z-index: 0;
+    margin-left: auto;
+}

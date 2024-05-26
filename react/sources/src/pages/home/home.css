@@ -1,0 +1,17 @@
+
+.home{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+}
+
+.homeMargin{
+    margin-top: -55px;
+    margin-left: 5vw;
+    display: flex;
+}
+
+.homeChartMargin{
+    margin-left: 4.5vw;
+}

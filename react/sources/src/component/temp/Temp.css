@@ -1,0 +1,27 @@
+.TempBottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.TempBottomItem{
+    flex:1;
+    margin: 0 30px;
+    padding: 3vw;
+    border-radius: 10px;
+    cursor: pointer;
+
+    -webkit-box-shadow: 0px 0px 12px -1px #000000;
+    box-shadow: 0px 0px 12px -1px #000000;
+}
+
+.TempBottomContainer{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.TempBottomFont{
+    font-size: 30px;
+    font-weight: 600;
+}

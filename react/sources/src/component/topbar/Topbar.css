@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+.topbar {
+    width: 80%;
+    height: 50vh; /* 높이를 뷰포트 높이의 20%로 조정 */
+    background-color: #6CA0DC;
+    position: relative; /* position 속성 추가 */
+     /* z-index 추가 */
+    margin-left: auto; /* 오른쪽에 자동으로 여백을 추가 */
+}
+
+/* 부모 요소에 position: relative 추가 */
+.topbarWrapper {
+    height: 100%;
+    padding: 0 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* 부모 요소에 relative 설정 */
+}
+
+/* 자식 요소인 .logo에 position: absolute 설정 */
+.logo {
+    font-weight: bold;
+    font-size: clamp(1.2vw, 1.4vw, 1.6vw);
+    color: white;
+    cursor: pointer;
+    position: absolute; /* 고정 위치 설정 */
+    top: 2vw; /* 원하는 위치에 고정 */
+    left: 17vw; /* 중앙에 고정하고 싶다면 */
+}
+
+
+.topRight {
+    display: flex;
+    align-items: center;
+}
+
+.topbarIconContainer {
+    position: relative;
+    margin-right: 1.5vw; /* 마진을 뷰포트 너비의 1.5%로 조정 */
+    color: #555;
+}
+
